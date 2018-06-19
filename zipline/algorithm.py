@@ -307,8 +307,6 @@ class TradingAlgorithm(object):
             )
 
         # Ensure that capital base hasn't been overridden to an invalid value
-        # This test duplicates that from qexec/algoproxy, but targets users
-        # who will run backtests from the API
         if self.sim_params.capital_base <= 0:
             raise ZeroCapitalError
 
