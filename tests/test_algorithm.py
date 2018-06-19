@@ -341,8 +341,7 @@ def handle_data(context, data):
         with self.assertRaises(ZeroCapitalError) as exc:
             # make_algo will trace to TradingAlgorithm,
             # where the exception will be raised
-            algo = self.make_algo(script=algo_text, sim_params=sim_params)
-            algo.run()
+            self.make_algo(script=algo_text, sim_params=sim_params)
         # Make sure the correct error was raised
         error = exc.exception
         self.assertEqual(str(error),

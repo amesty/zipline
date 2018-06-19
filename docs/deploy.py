@@ -75,6 +75,5 @@ def main():
     print("Updated documentation branch in directory %s" % ZIPLINE_ROOT)
     print("If you are happy with these changes, commit and push to gh-pages.")
 
-
 if __name__ == '__main__':
     main()
