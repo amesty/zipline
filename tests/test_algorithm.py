@@ -342,9 +342,11 @@ def handle_data(context, data):
             # make_algo will trace to TradingAlgorithm,
             # where the exception will be raised
             algo = self.make_algo(script=algo_text, sim_params=sim_params)
+            algo.run()
         # Make sure the correct error was raised
         error = exc.exception
-        self.assertEqual(str(error), 'initial capital base must be greater than zero')
+        self.assertEqual(str(error),
+                         'initial capital base must be greater than zero')
 
     def test_get_environment(self):
         expected_env = {
