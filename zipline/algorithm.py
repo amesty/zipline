@@ -254,6 +254,7 @@ class TradingAlgorithm(object):
                 Any asset identifiers that are not provided in the
                 equities_metadata, but will be traded by this TradingAlgorithm
         """
+
         self.sources = []
 
         # List of trading controls to be used to validate orders.
@@ -304,10 +305,6 @@ class TradingAlgorithm(object):
                 end=kwargs.pop('end', None),
                 trading_calendar=self.trading_calendar,
             )
-
-        # Ensure that capital base hasn't been overridden to an invalid value
-        if self.sim_params.capital_base <= 0:
-            raise ZeroCapitalError
 
         self.metrics_tracker = None
         self._last_sync_time = pd.NaT
@@ -413,6 +410,12 @@ class TradingAlgorithm(object):
         # compatibility.
         if 'data_frequency' in kwargs:
             self.data_frequency = kwargs.pop('data_frequency')
+
+        capital_base = self.sim_params.capital_base
+        if capital_base <= 0:
+            assert capital_base < 0, \
+                "initial capital base must be greater than zero"
+            raise ZeroCapitalError
 
         # Prepare the algo for initialization
         self.initialized = False
