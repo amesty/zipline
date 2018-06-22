@@ -23,7 +23,7 @@ from functools import partial
 # from zipline.zipline_warnings import ZiplineDeprecationWarning
 
 # IMPORTANT: This module is deprecated and is only here for temporary backwards
-# compatibility.  Look at the `trading_calendars.trading_schedule`
+# compatibility.  Look at the `trading-calendars`
 # module, as well as the calendar definitions in `trading_calendars`.
 
 # TODO: The new calendar API is currently in flux, so the deprecation
@@ -32,8 +32,8 @@ from functools import partial
 #
 # warnings.warn(
 #     "The `tradingcalendar` module is deprecated. See the "
-#     "`trading_calendars.trading_schedule` module,  as well as the "
-#     "calendar definitions in `trading_calendars`.",
+#     "`trading-calendars` module,  as well as the "
+#     "calendar definitions in `trading-calendars`.",
 #     category=ZiplineDeprecationWarning,
 #     stacklevel=1,
 # )
