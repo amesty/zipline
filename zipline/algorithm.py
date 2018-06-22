@@ -254,7 +254,6 @@ class TradingAlgorithm(object):
                 Any asset identifiers that are not provided in the
                 equities_metadata, but will be traded by this TradingAlgorithm
         """
-
         self.sources = []
 
         # List of trading controls to be used to validate orders.
